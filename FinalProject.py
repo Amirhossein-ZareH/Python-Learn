@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 # ----------------------------
-# داده‌های کارت‌ها (بیت‌وار)
+# عدد های کارتی 
 # ----------------------------
 cards = [
     [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31],
@@ -14,16 +14,16 @@ cards = [
 
 current_card = 0
 number = 0
-first_click = True  # برای تغییر متن دکمه در اولین کلیک
+first_click = True
 
 root = tk.Tk()
-root.title("جادوگر پایتونی")
+root.title("ذهن خوانی پایتون")
 root.geometry("720x480")
 root.config(bg="#1e1e2e")
 
 
 # ----------------------------
-# تابع وسط‌چین کردن پنجره
+# فانکشن وسط‌ چین کردن 
 # ----------------------------
 def center_window():
     root.update_idletasks()
@@ -37,9 +37,9 @@ def center_window():
 
 
 # ----------------------------
-# رابط گرافیکی
+# نمایش صفحه
 # ----------------------------
-title_label = tk.Label(root, text="جادوگر پایتونی", fg="#ffcc00", bg="#1e1e2e", font=("B Titr", 20))
+title_label = tk.Label(root, text="ذهن خوان پایتون", fg="#ffcc00", bg="#1e1e2e", font=("B Titr", 20))
 title_label.pack(pady=15)
 
 info_label = tk.Label(root, text="یه عدد رو تو ذهنت انتخاب کن", fg="#ffffff", bg="#1e1e2e", font=("B Nazanin", 14))
@@ -52,7 +52,7 @@ result_label = tk.Label(root, text="", fg="#00ff88", bg="#1e1e2e", font=("B Naza
 result_label.pack(pady=15)
 
 # ----------------------------
-# منطق برنامه
+# کار برنامه
 # ----------------------------
 def show_card():
     global current_card
@@ -69,7 +69,7 @@ def yes_answer():
     global number, current_card, first_click
     if first_click:
         first_click = False
-        yes_btn.config(text="✅ بله")  # تغییر متن دکمه بعد از اولین بار
+        yes_btn.config(text="✅ بله")
         show_card()
         return
 
@@ -83,7 +83,7 @@ def no_answer():
     global current_card, first_click
     if first_click:
         first_click = False
-        yes_btn.config(text="✅ بله")  # اگر کسی "خیر" زد، باز هم بعدش تغییر کنه
+        yes_btn.config(text="✅ بله")
         show_card()
         return
 
@@ -108,7 +108,7 @@ def reset_game():
     card_box.delete(1.0, tk.END)
     result_label.config(text="")
     info_label.config(text="یه عدد رو تو ذهنت انتخاب کن")
-    center_window()  # پنجره دوباره وسط صفحه می‌ره
+    center_window()
 
 
 # ----------------------------
