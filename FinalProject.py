@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
-import time
-import threading
 
+# ----------------------------
+# داده‌های کارت‌ها (بیت‌وار)
+# ----------------------------
 cards = [
     [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31],
     [2,3,6,7,10,11,14,15,18,19,22,23,26,27,30,31],
@@ -13,12 +14,31 @@ cards = [
 
 current_card = 0
 number = 0
+first_click = True  # برای تغییر متن دکمه در اولین کلیک
 
 root = tk.Tk()
 root.title("جادوگر پایتونی")
 root.geometry("720x480")
 root.config(bg="#1e1e2e")
 
+
+# ----------------------------
+# تابع وسط‌چین کردن پنجره
+# ----------------------------
+def center_window():
+    root.update_idletasks()
+    w = root.winfo_width()
+    h = root.winfo_height()
+    sw = root.winfo_screenwidth()
+    sh = root.winfo_screenheight()
+    x = (sw // 2) - (w // 2)
+    y = (sh // 2) - (h // 2)
+    root.geometry(f"{w}x{h}+{x}+{y}")
+
+
+# ----------------------------
+# رابط گرافیکی
+# ----------------------------
 title_label = tk.Label(root, text="جادوگر پایتونی", fg="#ffcc00", bg="#1e1e2e", font=("B Titr", 20))
 title_label.pack(pady=15)
 
@@ -31,6 +51,9 @@ card_box.pack(pady=10)
 result_label = tk.Label(root, text="", fg="#00ff88", bg="#1e1e2e", font=("B Nazanin", 16))
 result_label.pack(pady=15)
 
+# ----------------------------
+# منطق برنامه
+# ----------------------------
 def show_card():
     global current_card
     if current_card < len(cards):
@@ -41,33 +64,70 @@ def show_card():
     else:
         reveal_result()
 
+
 def yes_answer():
-    global number, current_card
+    global number, current_card, first_click
+    if first_click:
+        first_click = False
+        yes_btn.config(text="✅ بله")  # تغییر متن دکمه بعد از اولین بار
+        show_card()
+        return
+
     if current_card < len(cards):
         number += 2 ** current_card
         current_card += 1
         show_card()
 
+
 def no_answer():
-    global current_card
+    global current_card, first_click
+    if first_click:
+        first_click = False
+        yes_btn.config(text="✅ بله")  # اگر کسی "خیر" زد، باز هم بعدش تغییر کنه
+        show_card()
+        return
+
     if current_card < len(cards):
         current_card += 1
         show_card()
+
 
 def reveal_result():
     card_box.delete(1.0, tk.END)
     result_label.config(text=f"بود {number} عدد تو ذهنت")
     messagebox.showinfo("حدس جادویی!", f"عددی که تو ذهن تو بود {number} بود")
+    reset_game()
 
+
+def reset_game():
+    global current_card, number, first_click
+    current_card = 0
+    number = 0
+    first_click = True
+    yes_btn.config(text="✅ انتخاب کردم")
+    card_box.delete(1.0, tk.END)
+    result_label.config(text="")
+    info_label.config(text="یه عدد رو تو ذهنت انتخاب کن")
+    center_window()  # پنجره دوباره وسط صفحه می‌ره
+
+
+# ----------------------------
+# دکمه‌ها
+# ----------------------------
 btn_frame = tk.Frame(root, bg="#1e1e2e")
 btn_frame.pack(pady=10)
 
-yes_btn = tk.Button(btn_frame, text="✅ بله", command=yes_answer, width=10, font=("B Nazanin", 13), bg="#33cc66", fg="white")
+yes_btn = tk.Button(btn_frame, text="✅ انتخاب کردم", command=yes_answer, width=12,
+                font=("B Nazanin", 13), bg="#33cc66", fg="white")
 yes_btn.grid(row=0, column=0, padx=15)
 
-no_btn = tk.Button(btn_frame, text="❌ خیر", command=no_answer, width=10, font=("B Nazanin", 13), bg="#ff6666", fg="white")
+no_btn = tk.Button(btn_frame, text="❌ خیر", command=no_answer, width=12,
+                font=("B Nazanin", 13), bg="#ff6666", fg="white")
 no_btn.grid(row=0, column=1, padx=15)
 
-show_card()
 
+# ----------------------------
+# شروع برنامه
+# ----------------------------
+center_window()
 root.mainloop()
