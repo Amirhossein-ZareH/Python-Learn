@@ -103,3 +103,4 @@ p1 = Point(3, 4)
 p2 = Point(0, 0)
 
 print(f"Fasele beyn p1 va p2: {p1.distance_from(p2)}")
+
