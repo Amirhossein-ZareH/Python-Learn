@@ -22,19 +22,19 @@ class UniversitySystem:
 
     def _init_sample_data(self):
         samples = [
-            {"course_code": "101", "course_name": "ریاضی عمومی ۱", "professor": "دکتر احمدی", "professor_id": "1001", "units": 3, "capacity": 40, "current_students": 0, "schedule": "شنبه و دوشنبه ۱۰-۱۲", "department": "ریاضی", "classroom": "۲۰۱", "exam_date": "۱۴۰۴/۰۳/۲۰"},
-            {"course_code": "102", "course_name": "فیزیک ۱", "professor": "دکتر رضایی", "professor_id": "1002", "units": 3, "capacity": 35, "current_students": 0, "schedule": "یکشنبه و سه‌شنبه ۸-۱۰", "department": "فیزیک", "classroom": "۳۰۱", "exam_date": "۱۴۰۴/۰۳/۲۲"},
-            {"course_code": "201", "course_name": "برنامه‌نویسی پایتون", "professor": "مهندس محمدی", "professor_id": "2001", "units": 3, "capacity": 30, "current_students": 0, "schedule": "دوشنبه و چهارشنبه ۱۴-۱۶", "department": "کامپیوتر", "classroom": "۱۰۵", "exam_date": "۱۴۰۴/۰۳/۲۵"},
-            {"course_code": "301", "course_name": "معماری کامپیوتر", "professor": "دکتر شریفی", "professor_id": "3001", "units": 3, "capacity": 28, "current_students": 0, "schedule": "شنبه و چهارشنبه ۸-۱۰", "department": "کامپیوتر", "classroom": "۲۰۳", "exam_date": "۱۴۰۴/۰۳/۲۸"},
-            {"course_code": "401", "course_name": "زبان انگلیسی", "professor": "دکتر کریمی", "professor_id": "4001", "units": 2, "capacity": 50, "current_students": 0, "schedule": "یکشنبه ۱۶-۱۸", "department": "زبان", "classroom": "۱۰۱", "exam_date": "۱۴۰۴/۰۴/۰۱"},
-            {"course_code": "501", "course_name": "آمار و احتمال", "professor": "دکتر حسینی", "professor_id": "5001", "units": 3, "capacity": 45, "current_students": 0, "schedule": "دوشنبه و چهارشنبه ۱۰-۱۲", "department": "ریاضی", "classroom": "۲۰۲", "exam_date": "۱۴۰۴/۰۴/۰۵"}
+            {"course_code": "101", "course_name": "ریاضی عمومی ۱", "professor": "عباس زارع", "professor_id": "1001", "units": 3, "capacity": 40, "current_students": 0, "schedule": "شنبه و دوشنبه ۱۰-۱۲", "department": "ریاضی", "classroom": "۲۰۱", "exam_date": "۱۴۰۴/۰۳/۲۰"},
+            {"course_code": "102", "course_name": "فیزیک ۱", "professor": "شعله اعلائی", "professor_id": "1002", "units": 3, "capacity": 35, "current_students": 0, "schedule": "یکشنبه و سه‌شنبه ۸-۱۰", "department": "فیزیک", "classroom": "۳۰۱", "exam_date": "۱۴۰۴/۰۳/۲۲"},
+            {"course_code": "201", "course_name": "برنامه‌نویسی پایتون", "professor": " مجبتی مددیار", "professor_id": "2001", "units": 3, "capacity": 30, "current_students": 0, "schedule": "دوشنبه و چهارشنبه ۱۴-۱۶", "department": "کامپیوتر", "classroom": "۱۰۵", "exam_date": "۱۴۰۴/۰۳/۲۵"},
+            {"course_code": "301", "course_name": "کارگاه کامپیوتر", "professor": "فرزین اسمعیلی", "professor_id": "3001", "units": 3, "capacity": 28, "current_students": 0, "schedule": "شنبه و چهارشنبه ۸-۱۰", "department": "کامپیوتر", "classroom": "۲۰۳", "exam_date": "۱۴۰۴/۰۳/۲۸"},
+            {"course_code": "401", "course_name": "زبان انگلیسی", "professor": " کیا عباسی", "professor_id": "4001", "units": 2, "capacity": 50, "current_students": 0, "schedule": "یکشنبه ۱۶-۱۸", "department": "زبان", "classroom": "۱۰۱", "exam_date": "۱۴۰۴/۰۴/۰۱"},
+            {"course_code": "501", "course_name": " ازمایشگاه سیستم عامل", "professor": " نازنین صالح امین", "professor_id": "5001", "units": 3, "capacity": 45, "current_students": 0, "schedule": "دوشنبه و چهارشنبه ۱۰-۱۲", "department": "ریاضی", "classroom": "۲۰۲", "exam_date": "۱۴۰۴/۰۴/۰۵"}
         ]
         for c in samples: self.add_course(c)
         
         for s in [
-            {"sid": "400123456", "name": "علی محمدی", "password": "123456", "major": "کامپیوتر", "email": "ali@uni.ac.ir", "year": "1400"},
-            {"sid": "400123457", "name": "فاطمه احمدی", "password": "123456", "major": "ریاضی", "email": "fatemeh@uni.ac.ir", "year": "1400"},
-            {"sid": "401123458", "name": "محمد رضایی", "password": "123456", "major": "فیزیک", "email": "mohammad@uni.ac.ir", "year": "1401"}
+            {"sid": "400123456", "name": "حانیه اسماعیل زاده ", "password": "123456", "major": "کامپیوتر", "email": "ali@uni.ac.ir", "year": "1400"},
+            {"sid": "400123457", "name": " عرشیا زارع", "password": "123456", "major": "ریاضی", "email": "fatemeh@uni.ac.ir", "year": "1400"},
+            {"sid": "401123458", "name": " کیان باقری", "password": "123456", "major": "فیزیک", "email": "mohammad@uni.ac.ir", "year": "1401"}
         ]: self.add_student(**s)
 
     def add_student(self, sid, name, password, major, email="", year=""):
@@ -65,7 +65,7 @@ class UniversitySystem:
 class UniversityApp:
     def __init__(self, root):
         self.root = root
-        self.root.title(" سامانه آموزشی دانشگاه آزاد اسلامی")
+        self.root.title(" سامانه آموزشی دانشگاه  ")
         self.root.geometry("1200x700")
         self.root.configure(bg="#f8f9fa")
 
@@ -82,7 +82,7 @@ class UniversityApp:
         self.clear()
         header = tk.Frame(self.root, bg=self.colors['primary'], height=150)
         header.pack(fill='x'); header.pack_propagate(False)
-        tk.Label(header, text=" دانشگاه آزاد اسلامی", font=('B Nazanin', 30, 'bold'), fg='white', bg=self.colors['primary']).pack(pady=30)
+        tk.Label(header, text=" دانشگاه  ", font=('B Nazanin', 30, 'bold'), fg='white', bg=self.colors['primary']).pack(pady=30)
         tk.Label(header, text="سامانه جامع آموزشی - انتخاب واحد آنلاین", font=('B Nazanin', 14), fg='white', bg=self.colors['primary']).pack()
 
         body = tk.Frame(self.root, bg=self.colors['bg'])
@@ -329,7 +329,6 @@ class UniversityApp:
         search_var.trace_add('w', lambda *args: update_table())
         update_table()
 
-    # متدهای کمکی
     def _create_header(self, text, color):
         header = tk.Frame(self.root, bg=color, height=120)
         header.pack(fill='x'); header.pack_propagate(False)
@@ -359,7 +358,7 @@ class UniversityApp:
         header = tk.Frame(self.root, bg=color, height=140); header.pack(fill='x'); header.pack_propagate(False)
         tk.Label(header, text=f" خوش آمدید، {user_data['name']}", font=self.fonts['title'], fg='white', bg=color).pack(pady=25)
         if user_type == "student": tk.Label(header, text=f" رشته: {user_data['major']} | سال ورود: {user_data['entry_year']} | مجموع واحد: {user_data['total_units']}", font=self.fonts['normal'], fg='white', bg=color).pack()
-        elif user_type == "professor": tk.Label(header, text=f"🎓 دانشکده: {user_data['department']}", font=self.fonts['normal'], fg='white', bg=color).pack()
+        elif user_type == "professor": tk.Label(header, text=f" دانشکده: {user_data['department']}", font=self.fonts['normal'], fg='white', bg=color).pack()
         
         menu = tk.Frame(self.root, bg=self.colors['primary'], height=60); menu.pack(fill='x'); menu.pack_propagate(False)
         for text, cmd in menu_buttons:
@@ -393,3 +392,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = UniversityApp(root)
     root.mainloop()
+    
